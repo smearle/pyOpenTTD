@@ -22,7 +22,7 @@
 #include "../../tile_map.h"
 #include "../../string_func.h"
 #include "../../settings_func.h"
-#include "table/strings.h"
+#include "../../table/strings.h"
 
 #include "../../safeguards.h"
 

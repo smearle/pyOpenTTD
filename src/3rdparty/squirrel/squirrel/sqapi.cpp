@@ -4,6 +4,7 @@
 
 #include "../../../stdafx.h"
 
+#include <wchar.h>
 #include <squirrel.h>
 #include "sqpcheader.h"
 #include "sqvm.h"

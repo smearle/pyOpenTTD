@@ -19,7 +19,7 @@
 #include "../goal_type.h"
 #include "../story_type.h"
 
-#include "table/strings.h"
+#include "../table/strings.h"
 #include <vector>
 
 /**

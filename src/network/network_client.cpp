@@ -32,7 +32,7 @@
 #include "network_client.h"
 #include "../core/backup_type.hpp"
 
-#include "table/strings.h"
+#include "../table/strings.h"
 
 #include "../safeguards.h"
 

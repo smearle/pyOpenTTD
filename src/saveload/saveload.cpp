@@ -46,7 +46,7 @@
 #include "../fios.h"
 #include "../error.h"
 
-#include "table/strings.h"
+#include "../table/strings.h"
 
 #include "saveload_internal.h"
 #include "saveload_filter.h"

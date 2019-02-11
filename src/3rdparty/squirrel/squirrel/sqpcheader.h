@@ -8,7 +8,7 @@
 
 #include <new>
 //squirrel stuff
-#include <squirrel.h>
+#include<squirrel.h>
 #include "sqobject.h"
 #include "sqstate.h"
 

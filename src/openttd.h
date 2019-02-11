@@ -12,7 +12,112 @@
 #ifndef OPENTTD_H
 #define OPENTTD_H
 
+#include <stdafx.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <string.h>
+#include <ctype.h>
+#include <errno.h>
+#include <math.h>
+#include <cstdarg>
+#include <sys/stat.h>
+
+// windows imports would go here
+
+#include <unistd.h>
+#include <sys/time.h>
+#include <sys/file.h>
+#include <sys/types.h>
+#include <string>
+#include <vector>
+#include <map>
 #include "core/enum_type.hpp"
+
+// for swig OpenTTD object TODO: create new file for this
+#include "game/game.hpp"
+#include "game/game_config.hpp"
+#include "game/game_info.hpp"
+
+////////////////////////////////////////////////////////////////////////
+// Typedefs
+
+class OpenTTD;
+
+// This is the signature of the scripting language independent
+// callback fnunction.
+typedef void (*CallbackFunction)(
+    OpenTTD *openttd,
+    void *data,
+    const char *name,
+    const char *params,
+    va_list arglist);
+
+////////////////////////////////////////////////////////////////////////
+
+
+int OpenTTDPyMain();
+class OpenTTD {
+
+public:
+
+    OpenTTD();
+
+    ~OpenTTD();
+
+private:
+
+    void init();
+
+    void destroy();
+
+public:
+
+    Game* game;
+
+    void StartNew();
+
+    void Initialize();
+
+    void GameLoop();
+
+    GameInstance* GetInstance();
+
+    GameConfig* GetConfig();
+    
+    GameInfo* GetInfo();
+
+   // int UnixMain();
+
+    short idInt;
+
+    /**
+     * Hook into scripting language to send callbacks.
+     * (i.e. a function that calls back into the Python interpreter.)
+     */
+    CallbackFunction callbackHook;
+
+    /**
+     * Hook for scripting language to store scripted callback function.
+     * (i.e. a callable Python object.)
+     */
+    void *callbackData;
+
+    /**
+     * Hook for scripting language to store context (i.e. peer object).
+     * (i.e. Python SWIG wrapper of this Micropolis object.)
+     */
+    void *userData;
+
+    void callback(const char *name, const char *params, ...);
+
+    void getTestInt();
+    
+
+
+};
+
+
 
 /** Mode which defines the state of the game. */
 enum GameMode {
@@ -66,7 +171,7 @@ enum PauseMode {
 	/** Pause mode bits when paused for network reasons. */
 	PMB_PAUSED_NETWORK = PM_PAUSED_ACTIVE_CLIENTS | PM_PAUSED_JOIN,
 };
-DECLARE_ENUM_AS_BIT_SET(PauseMode)
+DECLARE_ENUM_AS_BIT_SET(PauseMode);
 typedef SimpleTinyEnumT<PauseMode, byte> PauseModeByte;
 
 /** The current pause mode */

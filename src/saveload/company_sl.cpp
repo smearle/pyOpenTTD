@@ -20,7 +20,7 @@
 
 #include "saveload.h"
 
-#include "table/strings.h"
+#include "../table/strings.h"
 
 #include "../safeguards.h"
 

@@ -20,7 +20,7 @@
 #include "../core/geometry_func.hpp"
 #include "../widgets/link_graph_legend_widget.h"
 
-#include "table/strings.h"
+#include "../table/strings.h"
 
 #include "../safeguards.h"
 

@@ -31,6 +31,7 @@
 #define _SQUIRREL_H_
 
 #include "../../../string_type.h"
+#include <wchar.h>
 
 typedef __int64 SQInteger;
 typedef unsigned __int64 SQUnsignedInteger;

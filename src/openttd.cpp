@@ -533,6 +533,117 @@ static const OptionData _options[] = {
 	GETOPT_END()
 };
 
+OpenTTD::OpenTTD()
+{
+    init();
+}
+
+OpenTTD::~OpenTTD()
+{
+    destroy();
+}
+
+void OpenTTD::init()
+{
+    idInt = 27;
+
+    // CallbackFunction callbackHook;
+    callbackHook = NULL;
+
+    // void *callbackData;
+    callbackData = NULL;
+
+    // void *userData;
+    userData = NULL;
+
+    game = new Game();
+
+}
+
+void OpenTTD::destroy()
+{
+}
+
+void OpenTTD::StartNew(){
+	game->StartNew();
+}
+
+void OpenTTD::Initialize(){
+	game->Initialize();
+}
+
+void OpenTTD::GameLoop(){
+	game->GameLoop();
+}
+
+GameInstance* OpenTTD::GetInstance(){
+	return game->GetGameInstance();
+}
+
+int OpenTTDPyMain(){
+	char* argv[2] = {"../bundle/micropolis", "-v sdl"};
+	return openttd_main(2, argv);
+}
+
+//int OpenTTD::UnixMain()
+//{
+//	char* argv[1] = {"-v sdl"};
+//	return main(1, argv);
+//}
+
+GameConfig* OpenTTD::GetConfig(){
+	return GameConfig::GetConfig(GameConfig::SSS_FORCE_GAME);
+}
+
+GameInfo* OpenTTD::GetInfo(){
+	GameConfig *config = OpenTTD::GetConfig();
+	return config->GetInfo();
+}
+
+
+/**
+ * Scripting language independent callback mechanism.
+ *
+ * This allows Micropolis to send callback messages with
+ * a variable number of typed parameters back to the
+ * scripting language, while maintining independence from
+ * the particular scripting language (or user interface
+ * runtime).
+ *
+ * The name is the name of a message to send.
+ * The params is a string that specifies the number and
+ * types of the following vararg parameters.
+ * There is one character in the param string per vararg
+ * parameter. The following parameter types are currently
+ * supported:
+ *  - i: integer
+ *  - f: float
+ *  - s: string
+ *
+ * See PythonCallbackHook defined in \c swig/micropolis-swig-python.i
+ * for an example of a callback function.
+ * @param name   Name of the callback.
+ * @param params Parameters of the callback.
+ */
+void OpenTTD::callback(const char *name, const char *params, ...)
+{
+       if (callbackHook == NULL) {
+       return;
+
+    va_list arglist;
+    va_start(arglist, params); // beginning after last named argument: params
+
+    (*callbackHook)(this, callbackData, name, params, arglist);
+
+    va_end(arglist);
+       }}
+
+
+void OpenTTD::getTestInt() {
+	callback("getTestInt", "s", "nuttin");
+}
+
+
 /**
  * Main entry point for this lovely game.
  * @param argc The number of arguments passed to this game.
@@ -541,6 +652,7 @@ static const OptionData _options[] = {
  */
 int openttd_main(int argc, char *argv[])
 {
+
 	char *musicdriver = NULL;
 	char *sounddriver = NULL;
 	char *videodriver = NULL;
@@ -699,7 +811,7 @@ int openttd_main(int argc, char *argv[])
 
 		goto exit_noshutdown;
 	}
-
+	// SEGFAULT CULPRIT
 	DeterminePaths(argv[0]);
 	TarScanner::DoScan(TarScanner::BASESET);
 
@@ -739,6 +851,7 @@ int openttd_main(int argc, char *argv[])
 	InitFreeType(false);
 
 	/* This must be done early, since functions use the SetWindowDirty* calls */
+
 	InitWindowSystem();
 
 	BaseGraphics::FindSets();

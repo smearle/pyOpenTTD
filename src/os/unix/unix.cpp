@@ -17,7 +17,7 @@
 #include "../../debug.h"
 #include "../../string_func.h"
 #include "../../fios.h"
-
+#include "../../settings_type.h"
 
 #include <dirent.h>
 #include <unistd.h>

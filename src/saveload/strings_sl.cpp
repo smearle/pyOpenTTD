@@ -14,7 +14,7 @@
 #include "../strings_func.h"
 #include "saveload_internal.h"
 
-#include "table/strings.h"
+#include "../table/strings.h"
 
 #include "../safeguards.h"
 
