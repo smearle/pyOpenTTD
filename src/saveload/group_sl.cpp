@@ -11,7 +11,6 @@
 
 #include "../stdafx.h"
 #include "../group.h"
-#include "../company_base.h"
 
 #include "saveload.h"
 
@@ -24,10 +23,14 @@ static const SaveLoad _group_desc[] = {
 	     SLE_VAR(Group, owner,              SLE_UINT8),
 	     SLE_VAR(Group, vehicle_type,       SLE_UINT8),
 	     SLE_VAR(Group, replace_protection, SLE_BOOL),
+<<<<<<< HEAD
 	 SLE_CONDVAR(Group, livery.in_use,      SLE_UINT8,                     SLV_GROUP_LIVERIES, SL_MAX_VERSION),
 	 SLE_CONDVAR(Group, livery.colour1,     SLE_UINT8,                     SLV_GROUP_LIVERIES, SL_MAX_VERSION),
 	 SLE_CONDVAR(Group, livery.colour2,     SLE_UINT8,                     SLV_GROUP_LIVERIES, SL_MAX_VERSION),
 	 SLE_CONDVAR(Group, parent,             SLE_UINT16,                    SLV_189, SL_MAX_VERSION),
+=======
+	 SLE_CONDVAR(Group, parent,             SLE_UINT16,                    189, SL_MAX_VERSION),
+>>>>>>> parent of 23960d0f2... Feature: Group liveries, and livery window usability enhancements. (#7108)
 	     SLE_END()
 };
 
@@ -50,6 +53,7 @@ static void Load_GRPS()
 		Group *g = new (index) Group();
 		SlObject(g, _group_desc);
 
+<<<<<<< HEAD
 		if (IsSavegameVersionBefore(SLV_189)) g->parent = INVALID_GROUP;
 
 		if (IsSavegameVersionBefore(SLV_GROUP_LIVERIES)) {
@@ -57,6 +61,9 @@ static void Load_GRPS()
 	                g->livery.colour1 = c->livery[LS_DEFAULT].colour1;
 	                g->livery.colour2 = c->livery[LS_DEFAULT].colour2;
 		}
+=======
+		if (IsSavegameVersionBefore(189)) g->parent = INVALID_GROUP;
+>>>>>>> parent of 23960d0f2... Feature: Group liveries, and livery window usability enhancements. (#7108)
 	}
 }
 
