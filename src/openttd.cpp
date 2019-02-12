@@ -64,6 +64,7 @@
 #include "gfx_layout.h"
 #include "viewport_sprite_sorter.h"
 #include "framerate_type.h"
+#include "livery.h"
 
 #include "linkgraph/linkgraphschedule.h"
 
