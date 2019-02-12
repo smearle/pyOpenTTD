@@ -17,7 +17,7 @@
 #include "../../strings_func.h"
 #include "../../autoreplace_func.h"
 #include "../../settings_func.h"
-#include "table/strings.h"
+#include "../../table/strings.h"
 
 #include "../../safeguards.h"
 

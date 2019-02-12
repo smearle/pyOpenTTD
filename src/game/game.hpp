@@ -21,11 +21,18 @@ typedef std::map<const char *, class ScriptInfo *, StringCompare> ScriptInfoList
 
 #include "../script/api/script_event_types.hpp"
 
+class Game;
+
+
+
 /**
  * Main Game class. Contains all functions needed to start, stop, save and load Game Scripts.
  */
 class Game {
 public:
+
+
+
 	/**
 	 * Called every game-tick to let Game do something.
 	 */

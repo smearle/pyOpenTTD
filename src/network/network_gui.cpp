@@ -35,7 +35,7 @@
 
 #include "../widgets/network_widget.h"
 
-#include "table/strings.h"
+#include "../table/strings.h"
 #include "../table/sprites.h"
 
 #include "../stringfilter_type.h"

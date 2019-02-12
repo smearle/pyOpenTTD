@@ -82,6 +82,7 @@
 	Game::instance = new GameInstance();
 	Game::instance->Initialize(info);
 
+
 	cur_company.Restore();
 
 	InvalidateWindowData(WC_AI_DEBUG, 0, -1);

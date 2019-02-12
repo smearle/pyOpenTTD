@@ -16,7 +16,7 @@
 #include "../settings_type.h"
 #include "../fileio_func.h"
 
-#include "table/strings.h"
+#include "../table/strings.h"
 
 #include "saveload_internal.h"
 #include "oldloader.h"

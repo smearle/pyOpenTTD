@@ -1,5 +1,5 @@
 /* see copyright notice in squirrel.h */
-#include <squirrel.h>
+#include<squirrel.h>
 #include <exception>
 #include "sqstdstring.h"
 

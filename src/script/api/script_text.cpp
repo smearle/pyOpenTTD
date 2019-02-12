@@ -15,7 +15,7 @@
 #include "script_text.hpp"
 #include "../../table/control_codes.h"
 
-#include "table/strings.h"
+#include "../../table/strings.h"
 
 #include "../../safeguards.h"
 

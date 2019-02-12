@@ -22,12 +22,14 @@
 #include "window_func.h"
 #include "newgrf_debug.h"
 
+#include "settings_type.h"
 #include "table/palettes.h"
 #include "table/string_colours.h"
 #include "table/sprites.h"
 #include "table/control_codes.h"
 
 #include "safeguards.h"
+
 
 byte _dirkeys;        ///< 1 = left, 2 = up, 4 = right, 8 = down
 bool _fullscreen;
