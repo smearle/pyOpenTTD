@@ -12,7 +12,6 @@
 #ifndef OPENTTD_H
 #define OPENTTD_H
 
-#include <stdafx.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
