@@ -12,7 +12,7 @@
 #ifndef SCRIPT_INSTANCE_HPP
 #define SCRIPT_INSTANCE_HPP
 
-#include<squirrel.h>
+#include <squirrel.h>
 #include "script_suspend.hpp"
 
 #include "../command_type.h"

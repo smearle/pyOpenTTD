@@ -28,7 +28,6 @@ public:
 	/* virtual */ int GetSetting(const char *name);
 	/* virtual */ ScriptInfo *FindLibrary(const char *library, int version);
 
-
 private:
 	/* virtual */ void RegisterAPI();
 	/* virtual */ void Died();

@@ -16,8 +16,7 @@
 #define SET_TYPE "music"
 #include "base_media_func.h"
 
-//TODO: Had to comment this out for makeline, since below header file is syntactically wrong
-//#include "safeguards.h"
+#include "safeguards.h"
 #include "fios.h"
 
 

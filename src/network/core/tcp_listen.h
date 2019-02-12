@@ -18,7 +18,7 @@
 #include "../network.h"
 #include "../../core/pool_type.hpp"
 #include "../../debug.h"
-#include "../../table/strings.h"
+#include "table/strings.h"
 
 #ifdef ENABLE_NETWORK
 

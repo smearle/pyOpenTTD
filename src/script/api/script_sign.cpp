@@ -11,7 +11,7 @@
 
 #include "../../stdafx.h"
 #include "script_sign.hpp"
-#include "../../table/strings.h"
+#include "table/strings.h"
 #include "../script_instance.hpp"
 #include "../../signs_base.h"
 #include "../../string_func.h"

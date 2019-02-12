@@ -8,7 +8,6 @@
 
 #include "../../../stdafx.h"
 
-#include <squirrel.h>
 #include <algorithm>
 #include "sqpcheader.h"
 #include "sqvm.h"

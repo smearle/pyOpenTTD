@@ -2,8 +2,6 @@
 #ifndef _SQLEXER_H_
 #define _SQLEXER_H_
 
-#include <wchar.h>
-
 struct SQLexer
 {
 	~SQLexer();

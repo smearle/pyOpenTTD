@@ -20,7 +20,7 @@
 #include "../../debug.h"
 #include "../../error.h"
 
-#include "../../table/strings.h"
+#include "table/strings.h"
 
 #include "../../safeguards.h"
 

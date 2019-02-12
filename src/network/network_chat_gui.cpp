@@ -29,7 +29,7 @@
 
 #include "../widgets/network_chat_widget.h"
 
-#include "../table/strings.h"
+#include "table/strings.h"
 
 #include "../safeguards.h"
 

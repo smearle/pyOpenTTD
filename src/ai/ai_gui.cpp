@@ -42,7 +42,7 @@
 #include "../game/game_info.hpp"
 #include "../game/game_instance.hpp"
 
-#include "../table/strings.h"
+#include "table/strings.h"
 
 #include <vector>
 

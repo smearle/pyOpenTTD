@@ -21,7 +21,7 @@
 #include "../settings_type.h"
 #include "network_content.h"
 
-#include "../table/strings.h"
+#include "table/strings.h"
 
 #if defined(WITH_ZLIB)
 #include <zlib.h>

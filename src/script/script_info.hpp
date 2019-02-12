@@ -12,7 +12,7 @@
 #ifndef SCRIPT_INFO_HPP
 #define SCRIPT_INFO_HPP
 
-#include<squirrel.h>
+#include <squirrel.h>
 #include "../misc/countedptr.hpp"
 
 #include "script_config.hpp"

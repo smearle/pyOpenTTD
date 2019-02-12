@@ -16,7 +16,7 @@
 #include "../town.h"
 #include "../newgrf.h"
 
-#include "../table/strings.h"
+#include "table/strings.h"
 
 #include "saveload_internal.h"
 

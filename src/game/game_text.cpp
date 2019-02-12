@@ -20,7 +20,7 @@
 #include "game.hpp"
 #include "game_info.hpp"
 
-#include "../table/strings.h"
+#include "table/strings.h"
 
 #include <stdarg.h>
 

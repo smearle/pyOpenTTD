@@ -26,7 +26,7 @@
 #include "network_content_gui.h"
 
 
-#include "../table/strings.h"
+#include "table/strings.h"
 #include "../table/sprites.h"
 
 #include <bitset>

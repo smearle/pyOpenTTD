@@ -84,7 +84,7 @@
 
 #include "../../core/overflowsafe_type.hpp"
 #include "../../company_type.h"
-#include<squirrel.h>
+#include <squirrel.h>
 
 /* Define all types here, so we don't have to include the whole _type.h maze */
 typedef uint BridgeType;     ///< Internal name, not of any use for you.

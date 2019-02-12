@@ -1101,7 +1101,6 @@ void DetermineBasePaths(const char *exe)
 	}
 #endif
 
-	return;
 #if defined(WITH_SHARED_DIR)
 	seprintf(tmp, lastof(tmp), "%s", SHARED_DIR);
 	AppendPathSeparator(tmp, lastof(tmp));
@@ -1139,8 +1138,7 @@ void DetermineBasePaths(const char *exe)
 #if defined(__MORPHOS__) || defined(__AMIGA__) || defined(DOS) || defined(OS2)
 	_searchpaths[SP_INSTALLATION_DIR] = NULL;
 #else
-	// TODO: f*d this for install
-	seprintf(tmp, lastof(tmp), "%s", OLD_DATA_DIR);
+	seprintf(tmp, lastof(tmp), "%s", GLOBAL_DATA_DIR);
 	AppendPathSeparator(tmp, lastof(tmp));
 	_searchpaths[SP_INSTALLATION_DIR] = stredup(tmp);
 #endif
@@ -1167,7 +1165,7 @@ void DeterminePaths(const char *exe)
 
 #if defined(WITH_XDG_BASEDIR) && defined(WITH_PERSONAL_DIR)
 	char config_home[MAX_PATH];
-	return;
+
 	const char *xdg_config_home = xdgConfigHome(NULL);
 	seprintf(config_home, lastof(config_home), "%s" PATHSEP "%s", xdg_config_home,
 			PERSONAL_DIR[0] == '.' ? &PERSONAL_DIR[1] : PERSONAL_DIR);

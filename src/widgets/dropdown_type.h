@@ -15,7 +15,7 @@
 #include "../window_type.h"
 #include "../gfx_func.h"
 #include "../core/smallvec_type.hpp"
-#include "../table/strings.h"
+#include "table/strings.h"
 
 /**
  * Base list item class from which others are derived. If placed in a list it

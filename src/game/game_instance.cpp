@@ -102,7 +102,6 @@ void GameInstance::Initialize(GameInfo *info)
 	SQGSController_Register(this->engine);
 
 	ScriptInstance::Initialize(info->GetMainScript(), info->GetInstanceName(), OWNER_DEITY);
-
 }
 
 void GameInstance::RegisterAPI()

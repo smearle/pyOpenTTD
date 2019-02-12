@@ -18,7 +18,7 @@
 #include "../../engine_base.h"
 #include "../../engine_func.h"
 #include "../../articulated_vehicles.h"
-#include "../../table/strings.h"
+#include "table/strings.h"
 
 #include "../../safeguards.h"
 

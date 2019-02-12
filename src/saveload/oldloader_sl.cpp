@@ -32,7 +32,7 @@
 #include "saveload_internal.h"
 #include "oldloader.h"
 
-#include "../table/strings.h"
+#include "table/strings.h"
 #include "../table/engines.h"
 #include "../table/townname.h"
 

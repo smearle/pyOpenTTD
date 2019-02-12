@@ -2793,4 +2793,24 @@ static const NWidgetPart _nested_buy_company_widgets[] = {
 			EndContainer(),
 			NWidget(NWID_HORIZONTAL, NC_EQUALSIZE), SetPIP(100, 10, 100),
 				NWidget(WWT_TEXTBTN, COLOUR_LIGHT_BLUE, WID_BC_NO), SetMinimalSize(60, 12), SetDataTip(STR_QUIT_NO, STR_NULL), SetFill(1, 0),
-NWidget(WWT_TEXTBTN, COLOUR_LIGHT_BLUE, WID_BC_YES), SetMinimalSize(60, 12), SetDataTip(STR_QUIT_YES, STR_NULL), SetFill(1, 0),
+				NWidget(WWT_TEXTBTN, COLOUR_LIGHT_BLUE, WID_BC_YES), SetMinimalSize(60, 12), SetDataTip(STR_QUIT_YES, STR_NULL), SetFill(1, 0),
+			EndContainer(),
+		EndContainer(),
+	EndContainer(),
+};
+
+static WindowDesc _buy_company_desc(
+	WDP_AUTO, NULL, 0, 0,
+	WC_BUY_COMPANY, WC_NONE,
+	WDF_CONSTRUCTION,
+	_nested_buy_company_widgets, lengthof(_nested_buy_company_widgets)
+);
+
+/**
+ * Show the query to buy another company.
+ * @param company The company to buy.
+ */
+void ShowBuyCompanyDialog(CompanyID company)
+{
+	AllocateWindowDescFront<BuyCompanyWindow>(&_buy_company_desc, company);
+}
